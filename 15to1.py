@@ -67,29 +67,29 @@ def build_model():
     model.compile(loss='mean_absolute_error', optimizer='nadam', metrics=['accuracy'])
     return model    
 def mkdir(path):
-    # ÒıÈëÄ£¿é
+    # å¼•å…¥æ¨¡å—
     import os
  
-    # È¥³ıÊ×Î»¿Õ¸ñ
+    # å»é™¤é¦–ä½ç©ºæ ¼
     path=path.strip()
-    # È¥³ıÎ²²¿ \ ·ûºÅ
+    # å»é™¤å°¾éƒ¨ \ ç¬¦å·
     path=path.rstrip("\\")
  
-    # ÅĞ¶ÏÂ·¾¶ÊÇ·ñ´æÔÚ
-    # ´æÔÚ     True
-    # ²»´æÔÚ   False
+    # åˆ¤æ–­è·¯å¾„æ˜¯å¦å­˜åœ¨
+    # å­˜åœ¨     True
+    # ä¸å­˜åœ¨   False
     isExists=os.path.exists(path)
  
-    # ÅĞ¶Ï½á¹û
+    # åˆ¤æ–­ç»“æœ
     if not isExists:
-        # Èç¹û²»´æÔÚÔò´´½¨Ä¿Â¼
-        print (path+' ´´½¨³É¹¦')
-        # ´´½¨Ä¿Â¼²Ù×÷º¯Êı
+        # å¦‚æœä¸å­˜åœ¨åˆ™åˆ›å»ºç›®å½•
+        print (path+' åˆ›å»ºæˆåŠŸ')
+        # åˆ›å»ºç›®å½•æ“ä½œå‡½æ•°
         os.makedirs(path)
         return True
     else:
-        # Èç¹ûÄ¿Â¼´æÔÚÔò²»´´½¨£¬²¢ÌáÊ¾Ä¿Â¼ÒÑ´æÔÚ
-        print (path+' Ä¿Â¼ÒÑ´æÔÚ')
+        # å¦‚æœç›®å½•å­˜åœ¨åˆ™ä¸åˆ›å»ºï¼Œå¹¶æç¤ºç›®å½•å·²å­˜åœ¨
+        print (path+' ç›®å½•å·²å­˜åœ¨')
         return False  
 if __name__ == '__main__':
     i=0
