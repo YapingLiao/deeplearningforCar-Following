@@ -34,7 +34,7 @@ def build_model():
     #model.add(Embedding(output_dim=(10,3,), input_dim=3, input_length=10))
     
    # model.add(Dropout(0.8))
-    model.add(GRU(300,init='lecun_uniform', input_shape=(20,3), return_sequences=True,activation ='sigmoid'))
+    model.add(GRU(300,init='lecun_uniform', input_shape=(10,3), return_sequences=True,activation ='sigmoid'))
     #model.add(Embedding(output_dim=100,input_dim=300)) 
    # model.add(LSTM(30,init='uniform', return_sequences=True,activation ='sigmoid'))
     #model.add(Dense(8,init='uniform',activation='relu'))
@@ -91,7 +91,7 @@ if __name__ == '__main__':
     hist= model.fit(trainset,aimset,nb_epoch=500,batch_size=100,verbose=2,validation_split=0.2) 
     history=hist.history.items()
     mkdir('result')
-    model.save_weights('result\vprediction100000sample.h5')
+    model.save_weights('result/vprediction100000sample.h5')
     data2=sio.loadmat('valid10.mat')
     validset=data2['valid']    
     prediction=model.predict(validset)
