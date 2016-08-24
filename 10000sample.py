@@ -95,5 +95,5 @@ if __name__ == '__main__':
     data2=sio.loadmat('valid10.mat')
     validset=data2['valid']    
     prediction=model.predict(validset)
-    
-    numpy.savetxt('result\vprediction10000sample.txt',prediction)
+    result_file = os.path.join('result', '10000samplevprediction10to1.txt')
+    numpy.savetxt(result_file, prediction)
